@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="GSB\mainBundle\Repository\visiteurRepository" name="GSB\mainBundle\Entity\visiteur">
+    <id name="idVisiteur" type="integer" column="id_visiteur" unique="true">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="idLaboratoire" type="integer" column="id_laboratoire"/>
+    <field name="idSecteur" type="integer" column="id_secteur" nullable="true"/>
+    <field name="nomVisiteur" type="string" column="nom_visiteur" length="100" nullable="true"/>
+    <field name="prenomVisiteur" type="string" column="prenom_visiteur" length="100" nullable="true"/>
+    <field name="adresseVisiteur" type="string" column="adresse_visiteur" length="200" nullable="true"/>
+    <field name="cpVisiteur" type="string" column="cp_visiteur" length="5" nullable="true"/>
+    <field name="villeVisiteur" type="string" column="ville_visiteur" length="100" nullable="true"/>
+    <field name="dateEmbauche" type="date" column="date_embauche" nullable="true"/>
+    <field name="loginVisiteur" type="string" column="login_visiteur" length="50" nullable="true"/>
+    <field name="pwdVisiteur" type="string" column="pwd_visiteur" length="200" nullable="true"/>
+    <field name="typeVisiteur" type="string" column="type_visiteur" length="1" nullable="true"/>
+  </entity>
+</doctrine-mapping>

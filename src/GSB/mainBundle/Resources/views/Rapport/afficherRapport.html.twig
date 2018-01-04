@@ -1,0 +1,163 @@
+{% extends "GSBmainBundle:Main:index.html.twig" %}
+{% block content %}
+    <div class="container well">
+        <div class='row'>
+            {% if formPraticien is defined %}
+                {{ form_start(formPraticien) }}
+                <div class="col-xs-12 col-md-6 encadrement">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12 text-center">
+                            <label>Praticien :</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4 text-center">
+                            <label>Prenom</label>
+                        </div>
+                        <div class="col-xs-6 col-md-8 text-center">
+                            {{ form_widget(formPraticien.prenomPraticien) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4 text-center">
+                            <label>Nom</label>
+                        </div>
+                        <div class="col-xs-6 col-md-8 text-center">
+                            {{ form_widget(formPraticien.nomPraticien) }}
+                        </div>
+                    </div>
+                        <!--<div class="col-xs-6 col-md-3 text-center">
+                            <label>Addresse</label>
+                        </div>
+                        <div class="col-xs-6 col-md-9 text-center">
+                            {#{ form_widget(formPraticien.adressePraticien) }}
+                        </div>
+                        <div class="col-xs-6 col-md-3 text-center">
+                            <label>Code postal</label>
+                        </div>
+                        <div class="col-xs-6 col-md-9 text-center">
+                            {{ form_widget(formPraticien.cpPraticien) }}
+                        </div>
+                        <div class="col-xs-6 col-md-3 text-center">
+                            <label>Ville</label>
+                        </div>
+                        <div class="col-xs-6 col-md-9 text-center">
+                            {{ form_widget(formPraticien.villePraticien) }#}
+                        </div>-->
+                </div>
+                {{ form_end(formPraticien) }}
+            {% endif %}
+            {% if formVisiteur is defined %}
+                {{ form_start(formVisiteur) }}
+                <div class="col-xs-12 col-md-6 encadrement">
+                    <div class='row'>
+                        <div class="col-xs-12 text-center">
+                            <label>Visiteur :</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4 text-center">
+                            <label>Prenom</label>
+                        </div>
+                        <div class="col-xs-6 col-md-8 text-center">
+                            {{ form_widget(formVisiteur.prenomVisiteur) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4 text-center">
+                            <label>Nom</label>
+                        </div>
+                        <div class="col-xs-6 col-md-8 text-center">
+                            {{ form_widget(formVisiteur.nomVisiteur) }}
+                        </div>
+                    </div>
+                        <!--<div class="col-xs-6 col-md-2 text-center">
+                            <label>Addresse</label>
+                        </div>
+                        <div class="col-xs-6 col-md-10 text-center">
+                            {#{ form_widget(formVisiteur.adresseVisiteur) }}
+                        </div>
+                        <div class="col-xs-6 col-md-2 text-center">
+                            <label>Code postal</label>
+                        </div>
+                        <div class="col-xs-6 col-md-4 text-center">
+                            {{ form_widget(formVisiteur.cpVisiteur) }}
+                        </div>
+                        <div class="col-xs-6 col-md-2 text-center">
+                            <label>Ville</label>
+                        </div>
+                        <div class="col-xs-6 col-md-4 text-center">
+                            {{ form_widget(formVisiteur.villeVisiteur) }#}
+                        </div>-->
+                </div>
+                {{ form_end(formVisiteur) }}
+            {% endif %}
+            {% if formRapport is defined %}
+                {{ form_start(formRapport) }}
+                <div class="col-xs-12 encadrement">
+                    <div class='row'>
+                        <div class="col-xs-12 text-center">
+                            <label>Rapport de visite:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-2 text-center">
+                            <label>Date :</label>
+                        </div>
+                        <div class="col-xs-6 col-md-2 text-center">
+                            {{ form_widget(formRapport.dateRapport) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-2 text-center">
+                            <label>Motif :</label>
+                        </div>
+                        <div class="col-xs-6 col-md-8 text-center">
+                            {{ form_widget(formRapport.motif) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-6 col-md-2 text-center">
+                        <label>Bilan :</label>
+                    </div>
+                    <div class="col-xs-6 col-md-8 text-center">
+                        {{ form_widget(formRapport.bilan) }}
+                    </div>
+                    </div>
+                </div>
+                {{ form_end(formRapport) }}
+            {% endif %}
+            {% if formOffert is defined %}
+                {{ form_start(formOffert, {'attr': {'id': 'formOffert'}}) }}
+                    <div class="col-xs-12 encadrement">
+                        <div class='row'>
+                            <div class="col-xs-12 col-md-12 text-center">
+                                <label>Echantillons offerts :</label>
+                            </div>
+                        </div>
+                            {% for message in app.flashes('notice_success') %}
+                                <div class="flash-notice text-center alert alert-success">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                            <div id="message" class="alert alert-danger text-center" hidden>
+                                <p>Attention, aucun échantillon n'est sélectionné !</p>
+                            </div>
+                        <div class='row'>
+                            <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                                <div class="text-left">Qte | Nom commercial</div>
+                                {{ form_widget(formOffert.medicament) }}
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                {{ form_widget(formOffert.Ajouter) }}
+                                {{ form_widget(formOffert.Modifier) }}
+                                {{ form_widget(formOffert.Supprimer) }}
+                            </div>
+                        </div>
+                    </div>
+                {{ form_end(formOffert)}}
+            {% endif %}
+        </div>
+        
+    </div>
+{% endblock %}

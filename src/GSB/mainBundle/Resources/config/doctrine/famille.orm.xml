@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="GSB\mainBundle\Repository\familleRepository" name="GSB\mainBundle\Entity\famille">
+    <id name="idFamille" type="integer" column="id_famille" unique="true">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="libFamille" type="string" column="lib_famille" length="100" nullable="true"/>
+  </entity>
+</doctrine-mapping>

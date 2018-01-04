@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="GSB\mainBundle\Repository\praticienRepository" name="GSB\mainBundle\Entity\praticien">
+    <id name="idPraticien" type="integer" column="id_praticien" unique="true">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="idTypePraticien" type="integer" column="id_type_praticien" nullable="true"/>
+    <field name="nomPraticien" type="string" column="nom_praticien" length="100" nullable="true"/>
+    <field name="prenomPraticien" type="string" column="prenom_praticien" length="100" nullable="true"/>
+    <field name="adressePraticien" type="string" column="adresse_praticien" length="200" nullable="true"/>
+    <field name="cpPraticien" type="string" column="cp_praticien" length="5" nullable="true"/>
+    <field name="villePraticien" type="string" column="ville_praticien" length="100" nullable="true"/>
+    <field name="coefNotoriete" type="decimal" column="coef_notoriete" precision="13" scale="2" nullable="true"/>
+  </entity>
+</doctrine-mapping>

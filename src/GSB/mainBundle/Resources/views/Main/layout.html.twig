@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="StyleSheet" href="{{ asset ('css/bootstrap.min.css')}}" type="text/css"/>
+        <link rel="StyleSheet" href="{{ asset ('css/style.css')}}" type="text/css"/>
+        <title>GSB</title>
+    </head>
+    <body>
+        <div class="container well">
+            <div class="row">
+                <!--// Logo //-->
+                <div class="col-xs-3 ">
+                    <a href="{{ path('gs_bmain_homepage') }}"><img id="logo" src="{{ asset ('img/logo.png')}}" alt=""/></a>
+                </div>
+                <!--// Titre //-->
+                <div class="col-xs-7 text-center" id="titre">
+                    {%if app.session.get('identificated') == 'true' %}<h1>Bienvenue {{app.session.get('prenom')}}</h1>{% endif %}
+                </div>
+            </div>
+            {% block menu %}{% endblock %}
+        </div>
+        {% block content %}{% endblock %}
+        
+        <script type="text/javascript" src="{{ asset ('js/jquery-3.2.1.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('js/bootstrap.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('js/fonctions.js')}}"></script>
+    </body>
+</html>

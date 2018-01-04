@@ -1,0 +1,43 @@
+# index
+gs_bmain_homepage:
+    path:     /
+    defaults: { _controller: GSBmainBundle:Main:index }
+
+# Login Logout
+gsb_login:
+    path:     /Login
+    defaults: { _controller: GSBmainBundle:Log:login }
+    
+gsb_logout:
+    path:     /Logout
+    defaults: { _controller: GSBmainBundle:Log:logout }
+    
+# Rapport
+gsb_rechercher_rapport:
+    path:     /Rechercher_Rapport
+    defaults: { _controller: GSBmainBundle:Rapport:rechercher }
+    
+gsb_choisir_rapport:
+    path:     /Choisir_Rapport
+    defaults: { _controller: GSBmainBundle:Rapport:choisir }
+    
+gsb_afficher_rapport:
+    path:     /Afficher_rapport
+    defaults: { _controller: GSBmainBundle:Rapport:afficher_rapport }
+    
+gsb_traiter_choix_offrir_rapport:
+    path:     /Choix_offrir
+    defaults: { _controller: GSBmainBundle:Rapport:traiter_choix_offrir }
+
+gsb_creer_offrir:
+    path:     /Creer_offrir
+    defaults: { _controller: GSBmainBundle:Rapport:creer_offrir }
+    
+gsb_modifier_offrir:
+    path:     /Modifier_offrir
+    defaults: { _controller: GSBmainBundle:Rapport:modifier_offrir }
+    
+# Ajax
+ajax_autocomplete_praticien:
+    path:     /Autocomplete
+    defaults: { _controller: GSBmainBundle:Rapport:ajax }

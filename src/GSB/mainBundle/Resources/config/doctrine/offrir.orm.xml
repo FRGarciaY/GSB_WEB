@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="GSB\mainBundle\Repository\offrirRepository" name="GSB\mainBundle\Entity\offrir">
+    <id name="idOffrir" type="integer" column="id_offrir" unique="true">
+      <generator strategy="AUTO"/>
+    </id>
+    <many-to-one field="medicament" target-entity="GSB\mainBundle\Entity\medicament">
+        <join-column name="id_medicament" referenced-column-name="id_medicament"/>
+    </many-to-one>
+    <many-to-one field="rapport" target-entity="GSB\mainBundle\Entity\rapport_visite">
+        <join-column name="id_rapport" referenced-column-name="id_rapport"/>
+    </many-to-one>
+    <many-to-one field="visiteur" target-entity="GSB\mainBundle\Entity\visiteur">
+        <join-column name="id_visiteur" referenced-column-name="id_visiteur"/>
+    </many-to-one>
+    <field name="qteOfferte" type="integer" column="qte_offerte" nullable="true"/>
+  </entity>
+</doctrine-mapping>

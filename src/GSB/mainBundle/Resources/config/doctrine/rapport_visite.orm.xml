@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="GSB\mainBundle\Repository\rapport_visiteRepository" name="GSB\mainBundle\Entity\rapport_visite">
+    <id name="idRapport" type="integer" column="id_rapport">
+      <generator strategy="AUTO"/>
+    </id>
+    <many-to-one field="praticien" target-entity="GSB\mainBundle\Entity\praticien">
+        <join-column name="id_praticien" referenced-column-name="id_praticien"/>
+    </many-to-one>
+    <many-to-one field="visiteur" target-entity="GSB\mainBundle\Entity\visiteur">
+        <join-column name="id_visiteur" referenced-column-name="id_visiteur"/>
+    </many-to-one>
+    <field name="dateRapport" type="date" column="date_rapport" nullable="true"/>
+    <field name="bilan" type="text" column="bilan" nullable="true"/>
+    <field name="motif" type="string" column="motif" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

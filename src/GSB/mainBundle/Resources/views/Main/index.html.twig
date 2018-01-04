@@ -1,0 +1,36 @@
+{% extends "GSBmainBundle:Main:Layout.html.twig" %}
+{% block main %}
+    {% block menu %}
+        <div class="row" id="menu" >
+            <ul>
+                <!-- Menu Rechercher un rapport de visite -->
+                <div id="menuRechercher" class="col-md-2 col-md-offset-8 col-xs-6 text-center">
+                    {% if app.session.get('identificated') == true %}
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Rapport de visite</span><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Rechercher_Rapport"><span>Rechercher</span></a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </div><!-- Fin Menu Recheche -->
+                <!-- Menu connexion -->
+                <div class="col-md-2 col-xs-6 text-center">
+                    {#<li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Connexion</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu">#}
+                            {% if app.session.get('identificated') == true %}
+                                <li><a href="Logout"><span>Se deconnecter</span></a></li>
+                            {% else %}
+                                <li><a href="Login"><span>S'identifier</span></a></li>
+                            {% endif %}
+                        {#</ul>
+                    </li>#}
+                </div><!-- Fin Menu connexion -->
+            </ul>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+{% endblock %}

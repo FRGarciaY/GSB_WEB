@@ -1,2 +1,4 @@
-# GSB_WEB
-Version Symfony de l'épreuve E4
+E4GSB
+=====
+
+A Symfony project created on November 29, 2017, 10:46 am.
