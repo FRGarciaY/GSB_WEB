@@ -1,4 +1,7 @@
 E4GSB
 =====
 
-A Symfony project created on November 29, 2017, 10:46 am.
+Projet PHP Symfony
+GSB : épreuve E4 du BTS SIO SLAM
+
+Ce dépôt n'est pas complet, en effet il manque les répertoires vendor et var. Cependant il permet de visualiser l'ensemble des éléments développés.
